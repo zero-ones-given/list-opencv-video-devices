@@ -9,9 +9,6 @@ def attemptFrameGrab(id):
     camera = cv2.VideoCapture(id)
     if not camera.isOpened():
         print("Port %s did not open." %id)
-        #frame = np.zeros((500, 300, 3), np.uint8)
-        #frame[:,:] = (id * 28,127,255 - id * 28)
-        #return frame 
         return []
 
     returnValue, frame = camera.read()
