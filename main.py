@@ -5,7 +5,6 @@ import math
 WINDOW_NAME = 'Preview'
 PREVIEW_MAX_SIZE = 240
 
-
 def attemptFrameGrab(id):
     camera = cv2.VideoCapture(id)
     if not camera.isOpened():
@@ -18,6 +17,7 @@ def attemptFrameGrab(id):
     returnValue, frame = camera.read()
     videoWidth = camera.get(3)
     videoHeight = camera.get(4)
+    camera.release()
 
     if returnValue:
         print(f"Port {id} is working and reads ({videoWidth} x {videoHeight}) frames.")
